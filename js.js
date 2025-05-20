@@ -15,6 +15,6 @@ var coolThing = [
 var button = document.getElementById("amin");
 
 for (var i = 0; i < coolThing.length; i++) {
-    var b2 = button();
-    document.append(b2);
+    var b2 = button.cloneNode(true);
+    document.body.append(b2);
 }
