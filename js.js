@@ -15,5 +15,4 @@ setTimeout(() => {
 var button = document.getElementById("amin");
 
 for (var i = 0; i < coolThing.length; i++) {
-    var newButton =  
 }
