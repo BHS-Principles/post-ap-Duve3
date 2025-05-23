@@ -1,3 +1,8 @@
+body {
+    background-color: yellow;
+}
+
+
 .wrap {
     display: flex;
     flex-direction: column;

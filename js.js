@@ -1,3 +1,11 @@
+/* 
+Clone an active button on the screen
+
+Set the text of each button to a value from a list
+
+Put an event handler that is set to each button 
+*/
+
 var coolThing = [
     "what it means",
     "austin texaws",
@@ -5,20 +13,27 @@ var coolThing = [
     "amin shun hil"
 ];
 
-var button = document.getElementById("amin");
+var HTML = document.getElementById("frame");
 
-function Funny(event) {
-    alert("ouch ouch my name is aminnn");
+function Funny(event, data) {
+    alert("ouch ouch");
     console.log(event);
+    console.log(data);
+
+    
 }
 
-button.addEventListener("click", Funny);
+HTML.addEventListener("click", (e) => {Funny(e, "abc");});
 
 for (var i = 0; i < coolThing.length; i++) {
-    var b2 = button.cloneNode(true);
 
-    b2.innerHTML = coolThing[i];
-    document.body.append(b2);
+    var d = coolThing[i];
+    var copy = HTML.cloneNode(true);
 
-    b2.addEventListener("click", Funny);
+
+    copy.addEventListener("click", (e) => {Funny(e, d);}); 
+
+    // copy.appendChild(coolThing[i]);
+    console.log(`jj: ${d}`)
+    document.body.append(copy);
 }
