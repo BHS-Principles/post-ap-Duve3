@@ -6,34 +6,37 @@ Set the text of each button to a value from a list
 Put an event handler that is set to each button 
 */
 
-var coolThing = [
-    "what it means",
-    "austin texaws",
-    "austin hillas",
-    "amin shun hil"
-];
+// suit: value
+var data = [
+    [0, 0],
+    [0, 1],
+    [3, 2]
+]
 
-var HTML = document.getElementById("frame");
+cardOg = document.getElementById("OG")
 
-function Funny(event, data) {
-    alert("ouch ouch");
-    console.log(event);
-    console.log(data);
 
-    
+for (var i = 0; i < data.length; i++) {
+    y_per = data[i][0] * (100/4);
+    x_per = data[i][1] * (100/12);
+
+    dup = cardOg.cloneNode(true);
+
+    dup.style["background-position-x"] = `${x_per}%`;
+    dup.style["background-position-y"] = `${y_per}%`;
+
+    document.body.append(dup);
 }
 
-HTML.addEventListener("click", (e) => {Funny(e, "abc");});
 
-for (var i = 0; i < coolThing.length; i++) {
+for (var i = 0; i < 4; i++) {
+    y_per = i * (100/4)
+    for (var j = 0; j < 13; j++) {
+        x_per = j * (100/12);
 
-    var d = coolThing[i];
-    var copy = HTML.cloneNode(true);
-
-
-    copy.addEventListener("click", (e) => {Funny(e, d);}); 
-
-    // copy.appendChild(coolThing[i]);
-    console.log(`jj: ${d}`)
-    document.body.append(copy);
+        var newCard = cardOg.cloneNode(true);
+        newCard.style["background-position-x"] = `${x_per}%`
+        newCard.style["background-position-y"] = `${y_per}%`
+        document.body.append(newCard);
+    }
 }

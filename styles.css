@@ -1,5 +1,10 @@
+body *{
+    display: inline-block;
+    position: relative;
+}
+
 body {
-    background-color: yellow;
+    background-color: pink;
 }
 
 
@@ -10,4 +15,14 @@ body {
 
 button {
     color: blue;
+}
+
+div.card {
+    width: 10rem;
+    height: 15rem;
+    background-color: green;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d5/English_pattern_playing_cards_deck_PLUS.svg);
+    background-size: 1300%, 500%;
+    background-position-x: 0%;
+    background-position-y: 0%;
 }
